@@ -1,0 +1,11 @@
+{
+  "name": "maps-enamed-2026",
+  "version": "1.0.0",
+  "description": "120 Mapas Clinicos Visuais ENAMED 2026",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "format": "npx prettier --write ."
+  }
+}

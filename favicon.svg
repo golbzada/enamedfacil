@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="ENAMED 2026 — Mapas Clínicos Visuais">
+  <rect width="64" height="64" rx="14" fill="#0b2b26"/>
+  <g stroke="#daf1de" stroke-width="5" stroke-linecap="round" fill="none">
+    <path d="M20 32 C32 32, 32 17, 40 17"/>
+    <path d="M20 32 C32 32, 32 47, 40 47"/>
+  </g>
+  <rect x="38" y="9" width="17" height="16" rx="5" fill="#daf1de"/>
+  <rect x="38" y="39" width="17" height="16" rx="5" fill="#daf1de"/>
+  <circle cx="18" cy="32" r="9" fill="#e6c878"/>
+</svg>

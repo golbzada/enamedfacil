@@ -36,6 +36,8 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
     <link rel="preload" as="image" href="assets/img/hero-mapas-abertos.png" fetchpriority="high" />
 
+    <link rel="preconnect" href="https://www.clarity.ms" crossorigin="anonymous" />
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
@@ -106,6 +108,35 @@
       document.head.appendChild(a);
     </script>
     <!-- End LowTrack Pixel Code -->
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+      // Não roda em ambiente local: assim as suas próprias sessões de teste
+      // não entram nas gravações nem sujam os mapas de calor.
+      (function () {
+        var h = location.hostname;
+        var local =
+          h === "localhost" ||
+          h === "127.0.0.1" ||
+          h === "" ||
+          h.indexOf(".local") !== -1;
+        if (local) return;
+
+        (function (c, l, a, r, i, t, y) {
+          c[a] =
+            c[a] ||
+            function () {
+              (c[a].q = c[a].q || []).push(arguments);
+            };
+          t = l.createElement(r);
+          t.async = 1;
+          t.src = "https://www.clarity.ms/tag/" + i;
+          y = l.getElementsByTagName(r)[0];
+          y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "yc6cq4ivwm");
+      })();
+    </script>
+    <!-- End Microsoft Clarity -->
 
     <style>
       /* --------------------------------------------------------------------------

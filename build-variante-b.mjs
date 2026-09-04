@@ -7,7 +7,7 @@ import fs from "node:fs";
    Fase 3: aplica as mudanças da variante B
    =========================================================================== */
 
-const bruto = fs.readFileSync("index.html", "utf8");
+const bruto = fs.readFileSync("index-fonte.html", "utf8");
 const usaCRLF = bruto.includes("\r\n");
 const linhas = bruto.replace(/\r\n/g, "\n").split("\n");
 
@@ -377,7 +377,7 @@ secoes[HERO].html = trocaUnica(
   `              >na reta final</em
             >
             de forma rápida, organizada e visual.`,
-  `              >batendo o olho</em
+  `              >de forma rápida, organizada e visual</em
             >.`,
   "segunda metade do h1",
 );
@@ -1071,15 +1071,16 @@ saida = trocaUnica(
   "</body>",
 );
 
-// Marca a variante no title
+// Carimbo de arquivo gerado. Sem "[B]" no <title>: este arquivo agora é o
+// site que vai ao ar, e o marcador apareceria na aba do navegador do cliente.
 saida = trocaUnica(
   saida,
   "<title>",
-  "<!-- VARIANTE B - percurso, dobra, CTAs e ordem das seções -->\n    <title>[B] ",
+  "<!-- ARQUIVO GERADO por build-variante-b.mjs a partir de index-fonte.html.\n         Não edite este arquivo à mão: rode `node build-variante-b.mjs`. -->\n    <title>",
   "<title>",
 );
 
-fs.writeFileSync("index-b.html", usaCRLF ? saida.replace(/\n/g, "\r\n") : saida);
+fs.writeFileSync("index.html", usaCRLF ? saida.replace(/\n/g, "\r\n") : saida);
 
 const nomes = {
   [HERO]: "hero",
@@ -1097,5 +1098,5 @@ const nomes = {
   [FAQ]: "faq",
 };
 
-console.log("index-b.html gerado -", saida.length, "bytes");
+console.log("index.html gerado -", saida.length, "bytes");
 console.log("ordem:", novaOrdem.map((n) => nomes[n]).join(" > "));

@@ -1071,6 +1071,14 @@ saida = trocaUnica(
   "</body>",
 );
 
+// Carimbo da variante no dataLayer: o GTM passa a distinguir A de B.
+saida = trocaUnica(
+  saida,
+  'dataLayer.push({ variante: "A" });',
+  'dataLayer.push({ variante: "B" });',
+  'marcador de variante no dataLayer',
+);
+
 // Carimbo de arquivo gerado. Sem "[B]" no <title>: este arquivo agora é o
 // site que vai ao ar, e o marcador apareceria na aba do navegador do cliente.
 saida = trocaUnica(
